@@ -1,4 +1,4 @@
-#project random pass gen v2.7.0
+# project random pass gen v2.7.0
 
 
 # importing the required modules
@@ -8,24 +8,15 @@ import string
 
 # defining the required lists
 
-# list of all printable characters
 lst_all=list(string.printable)
-# loop to remove invalid characters from all printable charaters list 
-for i in range(0,6):
-    lst_all.pop(-1)
+[lst_all.pop(-1) for _ in "______"] # last 6 characters are not printable, they are removed.
 
-# list of all aplbhabets- upper and lower case
-lst_let=list(string.ascii_letters)
+lst_let=list(string.ascii_letters) # uppercase and lowercase alphabets
+lst_let_up=list(string.ascii_uppercase) # uppercase alphabets
+lst_let_low=list(string.ascii_lowercase) # lowercase alphabets
+lst_num=['1','2','3','4','5','6','7','8','9','0']  # 0-9 numbers
 
-# list of all aplbhabets- uppercase
-lst_let_up=list(string.ascii_uppercase)
-
-# list of all aplbhabets- lowercase
-lst_let_low=list(string.ascii_lowercase)
-
-# list of all numbers and alphabets but no special characters
-lst_letnum=list(string.ascii_letters)
-lst_num=['1','2','3','4','5','6','7','8','9','0']
+lst_letnum=list(string.ascii_letters)# special characters excluded
 lst_letnum.extend(lst_num)
 
 # the quit counter
@@ -122,7 +113,7 @@ while quiter==0:
             no_num=hard_no_num
             
             hardcode=2
-        
+            
             # generation loop for the password
             for i in range(0,pass_l):
                 #the initial decider whether the character should be a number or an alphabet
